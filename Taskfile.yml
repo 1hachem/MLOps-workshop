@@ -12,4 +12,4 @@ tasks:
 
   up:
     desc: starts docker compose
-    cmd: docker compose up
+    cmd: docker compose -f docker-compose.yml up --build --watch
