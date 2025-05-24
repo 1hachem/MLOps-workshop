@@ -1,3 +1,7 @@
 
+# ENV
+.env
+
+# Cache
 .devbox
 __pycache__/
