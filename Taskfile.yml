@@ -9,3 +9,7 @@ tasks:
   default:
     desc: prints this help
     cmd: task -l
+
+  up:
+    desc: starts docker compose
+    cmd: docker compose up
