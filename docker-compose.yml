@@ -6,10 +6,18 @@ services:
     container_name: inference_api
     ports:
       - "8000:8000"
+    develop:
+      watch:
+        - action: sync
+          path: ./src
+          target: /app/src
+
+        - action: rebuild
+          path: pyproject.toml
 
   ngrok:
     image: ngrok/ngrok:latest
-    command: 'http inference:8000 --url=${NGROK_RESERVED_DOMAIN}'
+    command: 'http inference:8000 --url=${NGROK_RESERVED_DOMAIN} -v'
     ports:
       - 4040:4040
     environment:
