@@ -1,0 +1,16 @@
+services:
+  inference:
+    build:
+      dockerfile: docker/Dockerfile
+      context: .
+    container_name: inference_api
+    ports:
+      - "8000:8000"
+
+  ngrok:
+    image: ngrok/ngrok:latest
+    command: 'http inference:8000'
+    ports:
+      - 4040:4040
+    environment:
+      NGROK_AUTHTOKEN: ${NGROK_AUTHTOKEN}
