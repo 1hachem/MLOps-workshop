@@ -6,9 +6,11 @@ WORKDIR /app
 
 ADD ./pyproject.toml ./pyproject.toml
 ADD ./uv.lock ./uv.lock
-ADD ./src ./src
 
-RUN uv sync --frozen
+RUN uv sync --frozen --no-install-project
+
+ADD ./src ./src
+RUN uv sync
 
 EXPOSE 8000
 
