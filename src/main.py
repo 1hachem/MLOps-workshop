@@ -117,4 +117,4 @@ async def generate_text(request: TextGenerationRequest):
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="0.0.0.0", port=8000, reload=True, reload_dirs=".")
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True, reload_dirs=["."])
