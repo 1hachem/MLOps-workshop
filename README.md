@@ -1,4 +1,4 @@
-# ML deployement with huggingface, fastapi, docker and ngrok
+# ML deployment with huggingface, fastapi, docker and ngrok
 
 ## Requirements
 
